@@ -9,7 +9,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mail-user=emaybach@ldeo.columbia.edu
 
-module load anaconda
+module load anaconda3
 cd /oceans/project/bio210078p/emaybach/MetaG_2015/01_RawReads_npac
 source activate bioconda
 
