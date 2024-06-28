@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=bio210078p
+#SBATCH --account=XXXX
 #SBATCH --job-name=megahitasmbl
 #SBATCH --partition=RM-shared
 #SBATCH --time=72:00:00
@@ -7,7 +7,7 @@
 #SBATCH --output=megahitasmbl_%j.txt
 #SBATCH --error=megahitasmbl_%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=emaybach@ldeo.columbia.edu
+#SBATCH --mail-user=XXXX
 
 module load anaconda3
 conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/project_1/
