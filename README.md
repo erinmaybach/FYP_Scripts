@@ -1,5 +1,6 @@
 # FYP_Scripts
-Catch all repository for scripts used in FYP
+Catch all repository for scripts used in FYP<be>
+Some identifying information redacted 
 ## Downloading raw reads from SRA
 **download_sra_fastq**: script for downloading SRA files and converting to raw read fastq files using the SRAtoolkit 
 ## Trimming 
