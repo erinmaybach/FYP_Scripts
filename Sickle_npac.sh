@@ -10,9 +10,13 @@
 #SBATCH --mail-user=XXXX
 
 module load anaconda3
-cd /oceans/project/bio210078p/emaybach/MetaG_2015/01_RawReads_npac
+cd /XXX/
 source activate bioconda
 
-sickle pe -f FischkornScope22March16_TAGCTT_R1_002.fastq -r FischkornScope22March16_TAGCTT_R2_002.fastq -t sanger -o ../02_TrimmedReads/npac1_trimmed_R1.fq -p ../02_TrimmedReads/npac1_trimmed_R2.fq -s ../02_TrimmedReads/npac1_trimmed_singles.fq
+sickle pe -f FischkornScope22March16_TAGCTT_R1_002.fastq \
+  -r FischkornScope22March16_TAGCTT_R2_002.fastq \
+  -t sanger -o ../02_TrimmedReads/npac1_trimmed_R1.fq \
+  -p ../02_TrimmedReads/npac1_trimmed_R2.fq \
+  -s ../02_TrimmedReads/npac1_trimmed_singles.fq
 
 conda deactivate
