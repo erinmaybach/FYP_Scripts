@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=bio210078p
+#SBATCH --account=XXXX
 #SBATCH --job-name=clean_map_bin_check
 #SBATCH --partition=RM-shared
 #SBATCH --time=24:00:00
@@ -7,7 +7,7 @@
 #SBATCH --output=clean_map_bin_check_%j.txt
 #SBATCH --error=clean_map_bin_check%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=emaybach@ldeo.columbia.edu
+#SBATCH --mail-user=XXXX
 
 module load anaconda3
 
