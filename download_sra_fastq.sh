@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=bio210078p
+#SBATCH --account=XXXX
 #SBATCH --job-name=downloadfastq
 #SBATCH --partition=RM-shared
 #SBATCH --time=12:00:00
@@ -8,7 +8,7 @@
 #SBATCH --output=downloadfastq_%j.txt
 #SBATCH --error=downloadfastq_%j.err
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=emaybach@ldeo.columbia.edu
+#SBATCH --mail-user=XXXX
 
 module load sra-toolkit/2.10.9
 
