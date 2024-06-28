@@ -12,7 +12,7 @@
 module load anaconda3
 
 # Clean contig names and filter out short contigs
-conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/anvio-8_env
+conda activate /XXXX/.conda/envs/anvio-8_env
 anvi-script-reformat-fasta assembly/final.contigs.fa \
   -o contigs.fa \
   -l 1000 \
@@ -20,7 +20,7 @@ anvi-script-reformat-fasta assembly/final.contigs.fa \
 conda deactivate
 
 # Map with bowtie
-conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/bowtie_env
+conda activate /XXXX/.conda/envs/bowtie_env
 bowtie2-build contigs.fa index
 for sample in $(cat samples.txt)
 do
@@ -31,7 +31,7 @@ done
 conda deactivate
 
 # Index and convert to BAM
-conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/samtools_env
+conda activate /XXXX/.conda/envs/samtools_env
 for sample in $(cat samples.txt)
 do
   samtools view -b -o "$sample"-raw.bam "$sample".sam
@@ -48,7 +48,7 @@ do
 done
 
 # Run MaxBin on the concatenated reads listed in catSPAC
-conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/maxbin2_env
+conda activate /XXXX/.conda/envs/maxbin2_env
 run_MaxBin.pl -contig contigs.fa \
   -reads_list catSPAC \
   -out SPAC \
@@ -60,9 +60,9 @@ mkdir bins/
 mv SPAC.*.fasta bins/
 
 # Run CheckM on the bins created by MaxBin
-conda activate /ocean/projects/bio210078p/emaybach/.conda/envs/checkm
-export PATH=/ocean/projects/bio210078p/emaybach/.conda/envs/checkm/bin:$PATH
-export CHECKM_DATA_PATH=/ocean/projects/bio210078p/emaybach/.conda/envs/checkm/database
+conda activate /XXXX/.conda/envs/checkm
+export PATH=/XXXX/.conda/envs/checkm/bin:$PATH
+export CHECKM_DATA_PATH=/XXXX/.conda/envs/checkm/database
 echo ${CHECKM_DATA_PATH} | checkm data setRoot ${CHECKM_DATA_PATH}
 checkm lineage_wf -t 64 -x fasta bins/ checkm_maxbin
 conda deactivate
